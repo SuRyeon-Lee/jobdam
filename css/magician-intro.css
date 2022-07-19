@@ -1,0 +1,59 @@
+.sec-intro{
+    height: calc(100vh - var(--magicianHeaderHeight));
+    margin: 0 !important;
+    min-height: 651px;
+}
+.sec-intro .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 81px;
+    height: 100%;
+}
+.sec-intro .group-tit{
+    text-align: center;
+}
+.sec-intro .group-tit .tit-sub{
+    color: var(--colorGray);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.sec-intro .group-tit .tit-main{
+    font-size: 40px;
+    font-weight: 700;
+}
+.sec-intro .group-tit .tit-main .badge{
+    width: 55px;
+    margin-bottom: 3px;
+}
+.sec-intro .group-desc{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px 40px;
+    margin: 0 auto;
+    background-color: var(--colorBlue);
+    border-radius: 20px;
+    color: #fff;
+}
+.sec-intro .group-desc .desc{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 47px;
+    text-align: center;
+}
+.sec-intro .group-desc img{
+    position: absolute;
+}
+.sec-intro .group-desc .clip01{
+    left: -88px;
+    top: -36px;
+    width: 160px;
+}
+.sec-intro .group-desc .clip02{
+    right: -60px;
+    bottom: -35px;
+    width: 160px;
+}

@@ -1,0 +1,28 @@
+.sec-jobs .tit{
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.sec-jobs .tit span{
+    color: var(--colorBlue);
+    font-size: 15px;
+}
+.sec-field .tit{
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.sec-field .tit img{
+    height: 32px;
+    margin-right: 10px;
+}
+.sec-field .conts{
+    min-height: 100px;
+    padding: 25px 30px;
+    line-height: 26px;
+    word-break: keep-all;
+    word-wrap: break-word;
+    background-color:  var(--colorSky);
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>(주)잡담-꿈과 직업에 대한 이야기</title>
+        <link rel="stylesheet" href="/css/magician-common.css">
+        <link rel="stylesheet" href="/css/magician-base.css">
+        <link rel="stylesheet" href="/css/reset.css">
+        <!-- TODO: jquery 일단 CDN으로 연결했습니다. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script defer>
+            function controlRadios(elem){
+                elem.closest('.radios').find('label.active').removeClass('active');
+                elem.closest('label').toggleClass('active')
+            }
+        </script>
+    </head>
+<body class="jasosoe-magician">
+    <header class="magician-header">
+        <div class="wrapper">
+            <h3></h3>
+            <div class="tabs">
+                <div class="tab">
+                    <p class="tab-btn" onclick="$(this).closest('.tab').toggleClass('active')">나의 자소서
+                        <img class="toggler" src="./images/blue-toggler.svg" alt="">
+                    </p>
+                    <ul class="tab-toggle">
+                        <!-- TODO: 자소서 없을 경우 아래의 div활성화, li 비활성화 -->
+                        <!-- <div class="default">
+                            <img src="/images/alert-icon.png" alt="">
+                            <p>직무별 자소서를 작성하세요</p>
+                        </div> -->
+                        <li class="btn">직무1</li>
+                        <li class="btn">직무2</li>
+                        <li class="footer">총 2개</li>
+                    </ul>
+                </div>
+                <div class="tab">
+                    <p class="tab-btn">나의 이력서</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="sec-jobs">
+        <div class="wrapper">
+            <p class="tit">직무선택 <span>*1개 선택 가능</span></p>
+            <div class="radios">
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">IT</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">간호,의료코디네이터</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">경영기획,경영전략,경영관리</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">고객서비스(항공포함)</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">공기업</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">구매</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">국내영업,해외영업</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">금융</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">디자인</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">마케팅</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">물류,자재관리</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">사회복지</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">상품기획</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">생산관리</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">생산기술</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">설계,건축</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">식품영양</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">연구개발</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">영업관리</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">인사,교육</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">재무,회계</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">제조(생산)</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">총무</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">품질관리</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">홍보,방송</label>
+                <label><input type="radio" name="jobs" value="" onchange="controlRadios($(this))">외식,조리,식품</label>
+            </div>
+        </div>
+    </section>
+    <section class="sec-field">
+        <div class="wrapper">
+            <p class="tit"><img src="/images/ai-blue.png">졸업 후 진출분야</p>
+            <div class="conts">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt commodi vitae odio, iure facere aperiam velit, neque aliquid perspiciatis molestias, sint ratione? Voluptates sed aut est beatae consectetur quae non quo corporis ipsum ex dolor iste, debitis magnam at laboriosam, nostrum itaque harum voluptas maiores hic veniam pariatur, sequi cum repellendus. Voluptate, facilis. Quaerat, architecto atque sunt blanditiis vitae libero natus officiis saepe quas accusamus quae ad repellat fuga pariatur molestiae inventore voluptates, suscipit iste magnam neque? Saepe quod commodi nemo, sunt corporis aliquid! Odit facere sequi, assumenda, vel possimus, minus iure doloremque cum officiis suscipit dolore illum qui laudantium.
+            </div>
+        </div>
+    </section>
+    <section class="sec-btn">
+        <p class="btn-primary arrow">
+            <a href="/magician-form.html">
+                자소서 작성하기
+            </a>
+        </p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,269 @@
+@font-face {
+    font-family : 'NotoSansKR';
+    src : url(/fonts/NotoSansKR-Light.otf);
+    font-weight:300;
+}
+@font-face {
+    font-family : 'NotoSansKR';
+    src : url(/fonts/NotoSansKR-Regular.otf);
+    font-weight:400;
+}
+@font-face {
+    font-family : 'NotoSansKR';
+    src : url(/fonts/NotoSansKR-Medium.otf);
+    font-weight:500;
+}
+
+@font-face {
+    font-family : 'NotoSansKR';
+    src : url(/fonts/NotoSansKR-Bold.otf);
+    font-weight:700;
+}
+
+.jasosoe-magician{
+    --magicianHeaderHeight:55px;
+    --maxScreenWidth:1360px;
+    --fontColorBK:#232323;
+    --colorBgGray:#e8e8e8;
+    --colorBgDarkGray:#515151;
+    --colorBgLightGray:#f3f3f3;
+    --colorBgSkyGray:#E6EBEF;
+    --colorGray:#757575;
+    --colorMidGray:#939393;
+    --colorBlue:#0D5CB9;
+    --colorMidBlue:#6096fd;
+    --colorSky:#DFEDF6;
+    --colorNavy:#0F4585;
+
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'NotoSansKR';
+    color: var(--fontColorBK);
+}
+@media(max-width: 768px){
+    .jasosoe-magician{
+        min-width: 768px;
+        overflow: auto;
+    }
+}
+.jasosoe-magician section{
+    width: 100%;
+    margin: 120px 0;
+    overflow-x: hidden;
+}
+.wrapper{
+    max-width: var(--maxScreenWidth);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.btn-primary{
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    padding: 15px 10px 16px 10px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    background-color: var(--colorBlue);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-primary a{
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.btn-primary.arrow::after{
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    background: url('/images/button-arrow.png') no-repeat center / contain;
+    width: 8px;
+    height: 16px;
+    transition: 0.2s;
+    filter: brightness(0) invert(1);
+}
+.btn-primary:hover{
+    background-color: var(--colorNavy);
+}
+.btn-primary *{
+    color: #fff;
+    transition: 0.2s;
+}
+.btn-primary.ghost{
+    background-color: unset;
+    border: 1.5px solid var(--colorBlue);
+}
+.btn-primary.ghost.arrow::after{filter: none;}
+.btn-primary.ghost.arrow:hover::after{
+    filter: brightness(0) invert(1);
+}
+.btn-primary.ghost *{
+    color: var(--colorBlue);
+}
+.btn-primary.ghost:hover{
+    background-color: var(--colorBlue);
+}
+.btn-primary.ghost:hover *{
+    color: #fff;
+}
+.sec-btn > p{
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* 자소서 마법사 헤더 */
+
+.magician-header{
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    height: var(--magicianHeaderHeight);
+    width: 100%;
+    background: var(--colorBgGray);
+}
+.magician-header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.magician-header h3{
+    font-size: 19px;
+    font-weight: 500;
+}
+.magician-header .tabs{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-self: flex-start;
+}
+.magician-header .tabs .tab{
+    width: 150px;
+    text-align: center;
+    line-height: var(--magicianHeaderHeight);
+}
+.magician-header .tabs .tab-btn{
+    position: relative;
+    z-index: 2;
+    height: var(--magicianHeaderHeight);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.magician-header .tabs .tab-btn:hover{
+    color: var(--colorBlue);
+}
+.magician-header .tabs .tab-btn .toggler{
+    width: 7px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+    transition: 0.2s ease-in-out;
+    transform: rotate(180deg);
+    filter:grayscale(1);
+}
+.magician-header .tabs .tab-btn:hover .toggler{
+    filter:grayscale(0);
+}
+.magician-header .tabs .tab.active .toggler{
+    filter:grayscale(0);
+    transform: rotate(0deg);
+}
+.magician-header .tabs .tab.active .tab-btn{
+    border-bottom: 3px solid var(--colorBlue);
+    color: var(--colorBlue);
+    cursor: pointer;
+}
+.magician-header .tabs .tab-toggle{
+    position: absolute;
+    display: none;
+    width: 150px;
+    box-sizing: border-box;
+    border: 1px solid var(--colorGray);
+    border-top: none;
+    color: var(--colorGray);
+    opacity: 0;
+    transition: opacity 0.2;
+    cursor: pointer;
+    background-color: #fff;
+}
+.magician-header .tabs .tab-toggle .default{
+    padding: 15px 10px;
+    line-height: 24px;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+.magician-header .tabs .tab-toggle .default img{
+    width: 22px;
+}
+.magician-header .tabs .tab.active .tab-toggle{
+    display: block;
+    opacity: 1;
+}
+.magician-header .tabs .tab.active .tab-toggle li.btn{
+    cursor: pointer;
+}
+.magician-header .tabs .tab.active .tab-toggle li.btn:hover{
+    color: var(--fontColorBK);
+}
+.magician-header .tabs .tab-toggle li:last-child{
+    background-color: var(--colorBgGray);
+    height: calc(var(--magicianHeaderHeight) * 0.8);
+    line-height: calc(var(--magicianHeaderHeight) * 0.8);
+    color: #969696;
+    cursor: auto;
+}
+
+/* radio태그 버튼 공통 */
+.jasosoe-magician .radios{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.jasosoe-magician .radios label{
+    position: relative;
+    border: 1px solid var(--colorGray);
+    color: var(--colorGray);
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 15px 30px 15px 23px;
+    margin: 3px 0;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.jasosoe-magician .radios label input[type='radio']{
+    width: 0;
+    height: 0;
+}
+.jasosoe-magician .radios label input[type='radio']::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    display: none;
+    transform: translateY(-33%);
+    width: 13px;
+    height: 11px;
+    background: url('/images/blue-check.png') no-repeat center/ contain;
+}
+.jasosoe-magician .radios label input[type='radio']:checked::before{
+    display: block;
+}
+.jasosoe-magician .radios label.active{
+    border: 1px solid var(--colorBlue);
+    background-color: var(--colorSky);
+    color: var(--colorBlue);
+    font-weight: 500;
+}

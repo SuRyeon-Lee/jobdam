@@ -85,7 +85,7 @@
     top: 50%;
     transform: translateY(-50%);
     display: block;
-    background: url('/images/button-arrow.png') no-repeat center / contain;
+    background: url('../images/button-arrow.png') no-repeat center / contain;
     width: 8px;
     height: 16px;
     transition: 0.2s;
@@ -256,7 +256,7 @@
     transform: translateY(-33%);
     width: 13px;
     height: 11px;
-    background: url('/images/blue-check.png') no-repeat center/ contain;
+    background: url('../images/blue-check.png') no-repeat center/ contain;
 }
 .jasosoe-magician .radios label input[type='radio']:checked::before{
     display: block;

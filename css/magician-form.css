@@ -125,7 +125,7 @@
     left: -25px;
     width: 20px;
     height: 20px;
-    background: url('/images/arrow-now.png') no-repeat center / contain;
+    background: url('../images/arrow-now.png') no-repeat center / contain;
 }
 .magician-options ul.options li.option input{
     display: none;
@@ -142,7 +142,7 @@
     margin-left: 5px;
     width: 18px;
     height: 18px;
-    background: url('/images/plus-icon.png') no-repeat center / contain;
+    background: url('../images/plus-icon.png') no-repeat center / contain;
     transition: 0.3s ease-out;
 }
 .magician-options ul.options li.option.active.now .switch{
@@ -332,7 +332,7 @@
     width: 17px;
     height: 17px;
     margin-top: 6px;
-    background: url('/images/arrow-now.png') no-repeat center / contain;
+    background: url('../images/arrow-now.png') no-repeat center / contain;
 }
 .sec-form.result .main-caption{
     font-weight: 700;
@@ -364,7 +364,7 @@
     width: 99px;
     height: 24px;
     margin-bottom: 8px;
-    background: url('/images/ai-transparent.png') no-repeat center / contain;
+    background: url('../images/ai-transparent.png') no-repeat center / contain;
 }
 .sec-form table th.editable::after{
     content: "*수정가능";
@@ -516,7 +516,7 @@
     width: 14px;
     height: 14px;
     margin-top: 6px;
-    background: url('/images/arrow-now-gray.png') no-repeat center / contain;
+    background: url('../images/arrow-now-gray.png') no-repeat center / contain;
 }
 .sec-form .area-onepass .group-onepass_forms table{
     margin-top: 0;

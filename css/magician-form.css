@@ -21,7 +21,7 @@
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     min-height: 44px;
@@ -166,7 +166,6 @@
     bottom: 0;
     height: 100%;
     box-sizing: border-box;
-    z-index: 2;
 }
 .jasosoe-magician .container-keyword .radios.all{
     height: auto;

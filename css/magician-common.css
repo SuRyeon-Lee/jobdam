@@ -237,17 +237,17 @@
     color: var(--colorGray);
     box-sizing: border-box;
     border-radius: 30px;
-    padding: 15px 30px 15px 23px;
+    padding: 15px 29px 15px 22px;
     margin: 3px 0;
     font-size: 18px;
     cursor: pointer;
     transition: 0.1s;
 }
-.jasosoe-magician .radios label input[type='radio']{
+.jasosoe-magician .radios label input{
     width: 0;
     height: 0;
 }
-.jasosoe-magician .radios label input[type='radio']::before{
+.jasosoe-magician .radios label input::before{
     content: "";
     position: absolute;
     top: 50%;
@@ -258,7 +258,7 @@
     height: 11px;
     background: url('../images/blue-check.png') no-repeat center/ contain;
 }
-.jasosoe-magician .radios label input[type='radio']:checked::before{
+.jasosoe-magician .radios label input:checked::before{
     display: block;
 }
 .jasosoe-magician .radios label.active{
@@ -266,4 +266,5 @@
     background-color: var(--colorSky);
     color: var(--colorBlue);
     font-weight: 500;
+    padding: 15px 30px 15px 23px;
 }

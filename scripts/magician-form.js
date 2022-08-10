@@ -1,85 +1,30 @@
+function controlKeyword(elem){
+    elem.closest('.radios').find('label.active').removeClass('active');
+    elem.closest('label').toggleClass('active')
+    const secForm = elem.closest('.container-keyword').siblings('.sec-form');
+    for(let i=0;i<secForm.length;i++){
+        secForm[i].style.display= 'block'
+    }
+}
+
 function controlOptions(elem){
-    let option = elem.closest('.option')
-    let nowOption = document.querySelector(".option.now")
-    let activeElems = document.querySelectorAll('.option.active')
-    let navTit =  document.querySelector('.form-container nav .tab-tit')
-    if(!option.classList.contains('active')){
+    let option = elem.closest('.option') //지금 누른거의 옵션
+    if(!option.classList.contains('active')){ //지금 누른게 이미 액티브 되어 있지 않다면
 
         option.classList.add('active')
-        if(nowOption){
 
-            nowOption.classList.remove('now')
+    }else if(option.classList.contains('active')){ //지금 누른게 이미 액티브 되어있다면
 
-        }
-
-        option.classList.add('now')
-        navTit.closest('nav').classList.add('on')
-
-    }else if(option.classList.contains('active')){
-
-        if(!option.classList.contains('now')){
-            if(nowOption){
-
-                nowOption.classList.remove('now')
-
-            }
-            option.classList.add('now')
-            option.querySelector('input').checked = true
-
-        }else if(option.classList.contains('now')){
-
-            option.classList.remove('now')
-            option.classList.remove('active')
-            option.querySelector('input').checked = false
-            activeElems = document.querySelectorAll('.option.active')
-
-            if(activeElems.length !== 0){
-
-                activeElems[activeElems.length-1].classList.add('now')
-
-            }else if(activeElems.length === 0){
-
-                navTit.textContent = ''
-                navTit.closest('nav').dataset.option = ''
-                navTit.closest('nav').classList.remove('on')
-
-            }
-        }
+        option.classList.remove('active')
 
     }
-
-    nowOption = document.querySelector(".option.now")
-
-    if(nowOption){
-
-        changeConts(nowOption)
-        changeTitle(nowOption)
-
-    }else if(nowOption === null){
-
-        document.querySelector(".sec-option_conts.on").classList.remove('on')
-    
-    }
+    changeConts(elem)
 }
 
-function changeTitle(nowOption){
-
-    let nowTit = nowOption.querySelector('.name').textContent
-    let nowTitArea = document.querySelector('.form-container nav .tab-tit')
-    let nowID = nowOption.querySelector('input').id
-    nowTitArea.textContent = nowTit
-    nowTitArea.closest('nav').dataset.option = nowID
-}
-
-function changeConts(nowOption){
-    let nowID = nowOption.querySelector('input').id
+function changeConts(input){
+    let nowID = input.id
     let nowCont = document.querySelector(".sec-option_conts[data-option='"+ nowID + "']")
-    let onCont = document.querySelector(".sec-option_conts.on")
-    if(onCont){
-        onCont.classList.remove('on')
-    }
-    nowCont.classList.add('on');
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    nowCont.classList.contains('on') ? nowCont.classList.remove('on'):nowCont.classList.add('on');
 }
 
 function openPopups(button){
@@ -100,17 +45,22 @@ function closePopups(){
     document.querySelector('body').style.overflow='auto'
 }
 
-function controlOnepass(elem){
-    let areaOnepass = elem.closest('.area-onepass');
-    
-    if(areaOnepass.dataset.onepass === 'off'){
-        areaOnepass.dataset.onepass = 'on'
-    }else if(areaOnepass.dataset.onepass === 'on'){
-        areaOnepass.dataset.onepass = 'off'
+function controlCombine(elem){
+    let areaCombine = elem.closest('.area-combine');
+    if(elem.classList.contains('btn-combine')){
+        areaCombine.dataset.combine = 'on'
+    }else if(elem.classList.contains('btn-star')){
+        areaCombine.dataset.combine = 'off'
     }
 }
 
 function resizeTextArea(obj) {
     obj.style.height = "1px";
     obj.style.height = (12+obj.scrollHeight)+"px";
+}
+
+function controlMoreBtn(el){
+    const radioContainer = el.closest('.radios')
+    const activatedLabel = radioContainer.find('label.active')[0]
+    radioContainer[0].insertBefore(activatedLabel,radioContainer[0].firstChild)
 }

@@ -8,6 +8,9 @@
     padding: 0 30px 50px 0;
     flex-grow: 1;
 }
+.jasosoe-magician .group-sec .sec-option_conts .wrapper{
+    position: relative;
+}
 .jasosoe-magician .magician-options{
     flex-basis: 215px;
     min-width: 215px;
@@ -16,17 +19,19 @@
 }
 .jasosoe-magician .group-sec nav{
     width: 100%;
-    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
     justify-content: space-between;
     min-height: 44px;
+    box-shadow: 0px 3px 10px -3px rgba(0,0,0,0.2);
 }
-.jasosoe-magician .group-sec nav.on{
-    display: flex;
-}
+
 .jasosoe-magician .group-sec nav .tab-tit{
     flex-grow: 1;
-    padding: 7px 12px;
-    font-size: 19px;
+    padding: 8px 18px;
+    font-size: 22px;
     font-weight: 500;
     width: calc(100% - 316px - 215px);
     line-height: 30px;
@@ -47,6 +52,7 @@
     border: 1px solid var(--colorGray);
     border-right: none;
     cursor: pointer;
+    background-color: #fff;
 }
 .jasosoe-magician .group-sec nav ul.helpers li:last-child{
     border-right:  1px solid var(--colorGray);
@@ -111,22 +117,6 @@
     background-color: var(--colorMidBlue);
     border-color: var(--colorMidBlue);
 }
-.magician-options ul.options li.option.active.now label{
-    background-color: var(--colorNavy);
-    border-color: var(--colorNavy);
-}
-.magician-options ul.options li.option.active.now{
-    position: relative;
-}
-.magician-options ul.options li.option.active.now::after{
-    content: "";
-    display: block;
-    position: absolute;
-    left: -25px;
-    width: 20px;
-    height: 20px;
-    background: url('../images/arrow-now.png') no-repeat center / contain;
-}
 .magician-options ul.options li.option input{
     display: none;
 }
@@ -145,10 +135,13 @@
     background: url('../images/plus-icon.png') no-repeat center / contain;
     transition: 0.3s ease-out;
 }
-.magician-options ul.options li.option.active.now .switch{
+.magician-options ul.options li.option.active.active .switch{
     display: block;
     filter: brightness(0) invert(1);
     transform: rotate(-45deg);
+}
+.jasosoe-magician .container-keyword{
+    margin-top: 50px;
 }
 .jasosoe-magician .container-keyword .tit{
     font-size: 20px;
@@ -156,7 +149,62 @@
     color: var(--colorNavy);
 }
 .jasosoe-magician .container-keyword .radios{
+    position: relative;
     margin-top: 25px;
+    height: 57px;
+    overflow: hidden;
+    padding: 5px 80px 5px 10px;
+    background-color: var(--);
+    border:1px solid var(--colorBgGray);
+}
+.jasosoe-magician .container-keyword .radios .btn-more-area{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.jasosoe-magician .container-keyword .radios.all{
+    height: auto;
+}
+.jasosoe-magician .container-keyword .radios.all .btn-more-area{
+    bottom: 0;
+}
+.jasosoe-magician .container-keyword .radios .btn-toggle{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 67px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--colorGray);
+    color: #fff;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.jasosoe-magician .container-keyword .radios .btn-more{
+    display: flex;
+}
+.jasosoe-magician .container-keyword .radios.all .btn-fold{
+    display: flex;
+}
+.jasosoe-magician .container-keyword .radios.all .btn-more{
+    display: none;
+}
+.jasosoe-magician .container-keyword .radios .btn-toggle:hover{
+    background-color: var(--fontColorBK);
+}
+.jasosoe-magician .container-keyword .radios label{
+    max-width:191px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .jasosoe-magician .container-keyword .tip{
     margin-top: 25px;
@@ -178,8 +226,15 @@
     font-weight: 700;
     color: var(--colorBlue);
 }
-.jasosoe-magician .sec-option_conts{
+.jasosoe-magician .container-keyword ~ .sec-form{
     display: none;
+}
+.jasosoe-magician .sec-option_conts{
+    margin: 0 0 150px 0;
+    display: none;
+}
+.jasosoe-magician .sec-option_conts .sec-form{
+    margin: 80px 0;
 }
 .jasosoe-magician .sec-option_conts.on{
     display: block;
@@ -188,16 +243,13 @@
     width: 100%;
 }
 
-
-
-
 /* popup */
 .jasosoe-magician {
     position: relative;
 }
 .jasosoe-magician .popups{
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     display: none;
@@ -244,7 +296,7 @@
 
 .jasosoe-magician .popups .popup .popup-header .tit{
     padding-left: 15px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
 }
 .jasosoe-magician .popups .popup .popup-header img{
@@ -408,7 +460,7 @@
 }
 
 /* form - 힌번에 작성하기 */
-.sec-form .area-onepass{
+.sec-form .area-combine{
     position: relative;
     padding: 15px 25px;
     margin-top: calc(25px + 45px);
@@ -416,10 +468,7 @@
     border: 1px solid var(--colorMidGray);
     transition: 0.2s;
 }
-.sec-form .area-onepass[data-onepass="on"]{
-    border: 2px solid var(--colorBlue);
-}
-.sec-form .area-onepass .group-control_onepass{
+.sec-form .area-combine .group-control_combine{
     position: absolute;
     right: -1px;
     top: 0;
@@ -427,90 +476,83 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 10px 13px 6px 13px;
+}
+.sec-form .area-combine .group-control_combine .btn-tab{
+    padding: 10px 13px 10px 13px;
     box-sizing: border-box;
     border: 1px solid var(--colorMidGray);
     border-bottom: none;
-    border-radius: 12px 12px 0 0;
+    border-radius: 5px 5px 0 0;
     background-color: #fff;
     cursor: pointer;
 }
-.sec-form .area-onepass[data-onepass="on"] .group-control_onepass{
-    right: -2px;
-    border: 2px solid var(--colorBlue);
-    border-bottom: none;
+.sec-form .area-combine[data-combine="off"] .group-control_combine .btn-tab.btn-combine{
+    background-color: var(--colorBgGray);
+    color: var(--colorMidGray);
 }
-.sec-form .area-onepass .group-control_onepass .controller{
-    display: flex;
-    align-items: center;
-    padding: 2px;
-    border: 1px solid var(--colorMidGray);
-    border-radius: 20px;
-    width: 46px;
-    height: 18px;
+.sec-form .area-combine[data-combine="off"] .group-control_combine .btn-tab.btn-star{
+    background-color: var(--colorBlue);
+    color: #fff;
+    font-weight: 400;
 }
-.sec-form .area-onepass[data-onepass="on"] .group-control_onepass .controller{
-    justify-content: flex-end;
-    border-color: var(--colorBlue);
+.sec-form .area-combine[data-combine="on"] .group-control_combine .btn-tab.btn-star{
+    background-color: var(--colorBgGray);
+    color: var(--colorMidGray);
 }
-.sec-form .area-onepass .circle{
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--colorMidGray);
+.sec-form .area-combine[data-combine="on"] .group-control_combine .btn-tab.btn-combine{
+    background-color: var(--colorBlue);
+    color: #fff;
+    font-weight: 400;
 }
-.sec-form .area-onepass[data-onepass="on"] .group-control_onepass .circle{
-    background-color: var(--colorBlue)
-}
-.sec-form .area-onepass .group-control_onepass .text{
+.sec-form .area-combine .group-control_combine .text{
     display: none;
     padding: 0 2px;
     color: var(--colorMidGray);
     font-size: 13px;
     font-weight: 500;
 }
-.sec-form .area-onepass[data-onepass="on"] .group-control_onepass .text{
+.sec-form .area-combine[data-combine="on"] .group-control_combine .text{
     color: var(--colorBlue);
 }
-.sec-form .area-onepass[data-onepass="off"] .group-control_onepass .text.off{
+.sec-form .area-combine[data-combine="off"] .group-control_combine .text.off{
     display: block;
 } 
-.sec-form .area-onepass[data-onepass="on"] .group-control_onepass .text.on{
+.sec-form .area-combine[data-combine="on"] .group-control_combine .text.on{
     display: block;
 }
-.sec-form .area-onepass .group-control_onepass .caption{
+.sec-form .area-combine .group-control_combine .caption{
     font-size: 15px;
     font-weight: 500;
     color: var(--colorMidGray);
 }
-.sec-form .area-onepass[data-onepass="on"] .group-control_onepass .caption{
+.sec-form .area-combine[data-combine="on"] .group-control_combine .caption{
     color: var(--colorBlue);
 }
-.sec-form .area-onepass .group-normal_forms{
+.sec-form .area-combine .group-star_forms{
     display: none;
     padding: 10px 0;
 }
-.sec-form .area-onepass .group-onepass_forms{
+.sec-form .area-combine .group-combine_forms{
     display: none;
     padding: 10px 0;
 }
-.sec-form .area-onepass[data-onepass="off"] .group-normal_forms{
+.sec-form .area-combine[data-combine="on"] .group-combine_forms{
     display: block;
 }
-.sec-form .area-onepass[data-onepass="on"] .group-onepass_forms{
+.sec-form .area-combine[data-combine="off"] .group-star_forms{
     display: block;
 }
-.sec-form .area-onepass .group-normal_forms .sub-caption{
+.sec-form .area-combine .group-star_forms .sub-caption{
     display: flex;
     gap: 5px;
     margin-top: 55px;
     font-size: 18px;
     line-height: 23px;
 }
-.sec-form .area-onepass .group-normal_forms .sub-caption:first-child{
+.sec-form .area-combine .group-star_forms .sub-caption:first-child{
     margin-top: 0;
 }
-.sec-form .area-onepass .group-normal_forms .sub-caption::before{
+.sec-form .area-combine .group-star_forms .sub-caption::before{
     content: "";
     flex-shrink: 0;
     width: 14px;
@@ -518,6 +560,6 @@
     margin-top: 6px;
     background: url('../images/arrow-now-gray.png') no-repeat center / contain;
 }
-.sec-form .area-onepass .group-onepass_forms table{
+.sec-form .area-combine .group-combine_forms table{
     margin-top: 0;
 }

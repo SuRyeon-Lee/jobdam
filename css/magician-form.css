@@ -67,6 +67,22 @@
     background-color: var(--colorBgLightGray);
     cursor: pointer;
 }
+.magician-options ul.options li.option.active.now label{
+    background-color: var(--colorNavy);
+    border-color: var(--colorNavy);
+}
+.magician-options ul.options li.option.active.now{
+    position: relative;
+}
+.magician-options ul.options li.option.active.now::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: -25px;
+    width: 20px;
+    height: 20px;
+    background: url('../images/arrow-now.png') no-repeat center / contain;
+}
 .magician-options ul.options:nth-child(2){
     position: relative;
 }
